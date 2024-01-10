@@ -1,0 +1,7 @@
+{
+  "name": "Mobile rayhan",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
