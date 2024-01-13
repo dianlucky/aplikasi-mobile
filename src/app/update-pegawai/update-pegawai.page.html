@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Update Pegawai</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list lines="full">
+    <ion-item>
+      <ion-label position="floating">Nama</ion-label>
+      <ion-input [(ngModel)]="nama" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">NIK</ion-label>
+      <ion-input [(ngModel)]="no_hp" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Tempat lahir</ion-label>
+      <ion-input [(ngModel)]="tempat_lahir" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Tanggal lahir</ion-label>
+      <ion-input [(ngModel)]="tanggal_lahir" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Alamat</ion-label>
+      <ion-input [(ngModel)]="alamat" type="text"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-row>
+    <ion-col>
+      <ion-button
+        type="button"
+        (click)="updatePegawai()"
+        expand="full"
+        color="primary"
+        shape="full"
+      >
+        ubah penduduk
+      </ion-button>
+      <ion-button
+        type="button"
+        (click)="kembali()"
+        expand="full"
+        color="success"
+        shape="full"
+      >
+        Kembali
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-content>
