@@ -19,6 +19,7 @@ export class HomePage {
   alamat: any;
   pegawai: any;
 
+  //Fungsi yang dijalankan pertama kali
   constructor(
     public _apiService: ApiService,
     private toastController: ToastController
@@ -61,29 +62,28 @@ export class HomePage {
       tanggal_lahir: this.tanggal_lahir,
       alamat: this.alamat,
     };
-    if (data != null) {
-      this._apiService.addPegawai(data).subscribe(
-        (res: any) => {
-          console.log('Berhasil menambah data pegawai', res);
-          this.nama = '';
-          this.no_hp = '';
-          this.tempat_lahir = '';
-          this.tanggal_lahir = '';
-          this.alamat = '';
-          this.presentToast('Berhasil menambah data pegawai');
-          this.getPegawai();
-        },
-        (error: any) => {
-          console.log('Gagal menambah data pegawai', error);
-        }
-      );
-    } else {
-      this.getPegawai();
-    }
+    this._apiService.addPegawai(data).subscribe(
+      //Memanggil funct
+      (res: any) => {
+        console.log('Berhasil menambah data pegawai', res);
+        this.nama = '';
+        this.no_hp = '';
+        this.tempat_lahir = '';
+        this.tanggal_lahir = '';
+        this.alamat = '';
+        this.presentToast('Berhasil menambah data pegawai');
+        this.getPegawai();
+      },
+      (error: any) => {
+        console.log('Gagal menambah data pegawai', error);
+      }
+    );
   }
 
+  //Function untuk mengambil data pegawai
   getPegawai() {
     this._apiService.getPegawai().subscribe(
+      //Memanggil fungsi getPegawai pada apiService
       (res: any) => {
         console.log('Sukses', res);
         this.pegawai = res;
